@@ -46,3 +46,15 @@ case 0..<20 : print("Está no intervalo de 0 a 19")
 case 20...30 : print("Está no intervalo de 20 a 30")
 default : print("Intervalo não especificado")
 }
+
+
+// Gerando números aleatórios e usando intervalos em cláusulas "if":
+let numeroAleatorio = Int.random(in: 1...1000)
+print(numeroAleatorio)
+var intervalo = 1...500
+if intervalo.contains(numeroAleatorio){
+    print("Acerto Mizeravi")
+}
+else{
+    print("EROOOOOUUUUUU")
+}
