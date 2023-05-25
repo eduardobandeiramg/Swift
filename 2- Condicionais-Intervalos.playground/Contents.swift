@@ -13,6 +13,13 @@ else{
     print("Nem Eduardo e nem Joao")
 }
 
+//É possível fazer fazer múltiplas condições em um mesmo if, usando && ou ,
+
+let valor = 10
+if valor > 0 , valor < 20 , valor == 10{
+    print("Valor: \(valor)")
+}
+
 
 // Operador Ternário:
 nome == "Eduardo" ? print("Nome: Eduardo") : print("Nome incorreto!")
