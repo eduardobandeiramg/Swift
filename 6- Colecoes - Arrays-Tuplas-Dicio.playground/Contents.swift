@@ -48,6 +48,7 @@ print()
                                                                     //SETS (CONJUNTOS)
 //Como conjuntos, os sets são não ordenados e sem repetição
 //Não é possível acessar posições em conjuntos
+//Só armazena valores de um único tipo
 var conjunto : Set<Int> = [0]
 conjunto.insert(1)
 conjunto.insert(2)
@@ -97,4 +98,36 @@ print(b)
 var(_ , d) = aluno2
 print(d)
                                                                     //Dicionários
+//Conjunto de dados armazenados seguindo o padrão chave-valor.
+//Assim como conjuntos, não aceitam repetição de chaves (de valor ok) e não são ordenados
+var declarandoDicio: [Int:String]
+var criandoDicioVazio:[Int:String] = [:]
+var criandoDicio = [
+    000:"Eduardo",
+    001:"Francisco",
+    002:"João"
+]
+for duplas in criandoDicio{
+    print(duplas)
+}
+for (chave, valor) in criandoDicio{
+    print(chave , valor)
+}
+for chaves in criandoDicio.keys{
+    print(chaves)
+}
+for valores in criandoDicio.values{
+    print(valores)
+}
 
+criandoDicioVazio [000] = "Eduardo"
+criandoDicioVazio.updateValue("Joao", forKey: 000)
+criandoDicioVazio[000] = "Leonidas"
+criandoDicio[0]
+criandoDicio[1]
+criandoDicio[2]
+criandoDicio.removeValue(forKey: 001)
+criandoDicio[002]?.removeLast()
+criandoDicioVazio[0]//buscando valor pela posição no dicionario
+criandoDicioVazio[000]//buscando valor pelo valor da chave
+criandoDicioVazio.reserveCapacity(10)
