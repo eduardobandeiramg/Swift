@@ -22,26 +22,25 @@ print(texto)
 
 
                                                             // TÉCNICAS DE DESEMBRULHO
-                            //Desembrulho forçado, Vinculação Opcional, Operador de Coalescência Nula e Encadeamento Opcional
+                            //Desembrulho forçado, Vinculação Opcional, Guard Let, Encadeamento Opcional e Operador de Coalescência Nula
 
         //(1) Desembrulho forçado (Forced Unwrapping) (não recomendado): para isso, basta colocar um ponto de exclamação após a variável.
 print(texto!)
+if texto != nil {
+    print(texto!)
+}
 /*Entretanto, ao fazer esse desembrulho forçado, corre-se o risco de tentar desembrulhar um valor nulo, gerando um erro de execução e crashando a aplicação.
  Para que isso seja evitado, pode-se fazer um desembrulho seguro, como por exemplo:
  */
 
-        //(2) Vinculação Opcional (Optional Binding) -> if / if let / guard let
+        //(2) Vinculação Opcional (Optional Binding) -> if let
             // Usando estrutura condicional if
 var texto2 : String?
-if texto2 != nil{
-    print(texto2!)
-}
-            // Usando estrutura condicional if let
 if let valortemporario = texto2{            //Também é comum utilizar if let texto2 = texto2 (ambas as variaveis com mesmo nome)
     //Executa caso texto2 seja diferente de nil
 } //else ou não aqui
 
-            // Usando estrutura condicional guard let (apenas dentro de uma função)
+        //(3) Guard let (apenas dentro de uma função)
 func desembrulhaInteiro (apelido variavelOpcional : Int?) -> Int{
     guard let constanteDeVerificacao = variavelOpcional else{
         //aqui, deve-se fazer um tratamento caso a variavel opcional tenha um valor nulo (return ou throw)
@@ -59,19 +58,25 @@ func desembrulhaInteiro (apelido variavelOpcional : Int?){
     return
 }
 
-    //(3) Operador de Coalescência Nula
+    //(4) Operador de Coalescência Nula
 let opcionalUsandoCoalescenciaNula : Int? = nil
 var variavel_armazena_valor = opcionalUsandoCoalescenciaNula ?? 0
+print(variavel_armazena_valor)
+
+var meuNome: String?
+print(meuNome ?? "faiô")
 //A variavel criada para armazenar o valor do opcional o fará caso esse opcional possua um valor dentro dele. Caso contrário, armazenará um valor de backup caso o opcional seja nulo, neste caso será 0
 
-    //(4) Encadeamento Opcional
-        //Trata-se, basicamente, de utilizar a variável opcional (seja dentro de um comando print, seja usando um método, etc). Ex.:
+
+    //(5) Encadeamento Opcional
+        //Trata-se, basicamente, de utilizar a variável opcional (seja dentro de um comando print, seja usando um método, etc).
+        //Quando usa-se as opcionais assim, sem fazer o desembrulho, o valor retornado estará dentro de um opcional ou nulo caso não seja possivel realizar uma operação com o valor do opcional dado. Ex.:
 print("Exemplo de encadeamento opcional, usando um método em uma variável opcional: ")
 var nome : String? = "Eduardo"
-var primeiraLetra = nome?.first
+var nomeNulo : String?
+var primeiraLetra = nome?.first //se tiver valor, realiza a função. Se não, segue o jogo
 if let verifica = primeiraLetra{
     print("Primeira letra do nome: \(verifica)")
-    print(primeiraLetra)
 }
 
                                                                 //Observações:
@@ -94,5 +99,3 @@ if let verifica = primeiraLetra{
  - Na estruthra switch case
  - Na estrutura for
  */
-
-
