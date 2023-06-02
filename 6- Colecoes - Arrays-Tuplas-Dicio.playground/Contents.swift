@@ -107,6 +107,7 @@ var criandoDicio = [
     001:"Francisco",
     002:"João"
 ]
+var criandoOutroDicioVazio = [Int:String]()
 for duplas in criandoDicio{
     print(duplas)
 }
