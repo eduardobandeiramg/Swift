@@ -33,3 +33,16 @@ struct ContaCorrente2{
 var contaFrancisco = ContaCorrente2(nome:"Eduardo" , saldo:1200.50)
 contaFrancisco.sacar(200.50)
 contaFrancisco.saldo
+
+/*
+ Structures, diferente de classes, possuem construtores padrões para o caso de nenhum construtor ser especificado.
+ Esses construtores padrão funcionam adicionando os valores de cada atributo não inicializado, com seus respectivos nomes como chaves na passagem de parâmetro do construtor.
+ Caso algum construtor seja especificado em structures, construtores padrões deixam de existir, a não ser que seja criado outro construtor semelhante ao construtor padrão
+ 
+ As diferentes maneiras de se instanciar objetos de structures são exatamente iguais aos de classes:
+ 
+ var meuRetangulo = Retangulo(base: 10 , altura : 5)
+ var meuRetangulo2 = Retangulo.init(base: 10 , altura : 5)
+ var meuRetangulo3 : Retangulo = .init(base: 10 , altura : 5)
+ 
+ */

@@ -46,7 +46,7 @@ for(index , elemento) in exemplo2.enumerated(){
 print()
 
                                                                     //SETS (CONJUNTOS)
-//Como conjuntos, os sets são não ordenados e sem repetição
+//Como conjuntos, os sets são não ordenados e não aceitam repetição
 //Não é possível acessar posições em conjuntos
 //Só armazena valores de um único tipo
 var conjunto : Set<Int> = [0]
@@ -71,9 +71,12 @@ print()
 var aluno : (matricula:Int , nome:String)
 aluno = (1000 , "Eduardo")
 aluno = (matricula:1001 , nome: "Francisco")
+print(aluno.matricula , aluno.nome) //É possível acessar os valores de tuplas tanto pelo índice quanto pela chave, se houver
 
 var notas = ("Eduardo" , 6 , 7 , 9 , 10)
+print(notas.0 , notas.1 , notas.2)
 var notas2 = (nome: "Eduardo" , nota1: 10 , nota2: 15 , nota3:8)
+print(notas2.nome , notas2.nota1)
 
 typealias Alunos = (Int , String)
 let aluno1 : Alunos = (0 , "Eduardo")
