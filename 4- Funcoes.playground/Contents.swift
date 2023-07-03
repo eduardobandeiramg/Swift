@@ -49,7 +49,7 @@ print(soma(numero1:5 , numero2:5))
 print()
 
 //Chamando a função 4:
-print(soma(5 , mais:5))
+print(soma(5 , 5))
 print()
 
 //Também é possível passar variáveis como parâmetros:

@@ -13,7 +13,7 @@ print(texto)
 
 //Essa possibilidade de usar opcionais só serve no caso de variáveis. O que faz sentido, uma vez que constantes, uma vez que receberem o valor nulo, permanecerão para sempre com esse valor. Por causa disso, mesmo que se atribua um valor opcional a uma constante, não é possível utilizar as constantes antes de inicializá-las.
 
-/*Variáveis, quando não são declaradas, armazenam dentro delas o valor nulo até que sejam inicializadas.
+/* Variáveis, quando não são inicializadas, armazenam dentro delas o valor nulo até que sejam inicializadas.
  Porém, não é possível utilizá-las ao longo do programa.
  Além disso, uma vez que são inicializadas, não podem mais receber o valor nulo.
  Quando se usa opcionais, essas variáveis podem receber o valor nulo mesmo depois de serem inicializadas. */
@@ -22,7 +22,7 @@ print(texto)
 
 
                                                             // TÉCNICAS DE DESEMBRULHO
-                            //Desembrulho forçado, Vinculação Opcional, Guard Let, Encadeamento Opcional e Operador de Coalescência Nula
+                            //Desembrulho forçado, Vinculação Opcional, Guard Let, Operador de Coalescência Nula e Encadeamento Opcional
 
         //(1) Desembrulho forçado (Forced Unwrapping) (não recomendado): para isso, basta colocar um ponto de exclamação após a variável.
 print(texto!)
@@ -49,7 +49,7 @@ func desembrulhaInteiro (apelido variavelOpcional : Int?) -> Int{
     return constanteDeVerificacao //aqui, define-se o que será retornado caso a variável opcional não seja nula
 }
 //Agora uma função sem retorno:
-func desembrulhaInteiro (apelido variavelOpcional : Int?){
+func desembrulhaInteiro (apelido variavelOpcional : Int?) {
     guard let constanteDeVerificacao = variavelOpcional else{
         //aqui, deve-se fazer um tratamento caso a variavel opcional tenha um valor nulo (return ou throw)
         return
@@ -66,7 +66,11 @@ print(variavel_armazena_valor)
 var meuNome: String?
 print(meuNome ?? "faiô")
 //A variavel criada para armazenar o valor do opcional o fará caso esse opcional possua um valor dentro dele. Caso contrário, armazenará um valor de backup caso o opcional seja nulo, neste caso será 0
-
+/*
+ Basicamente, o operador ?? verifica se a variável possui um valor diferente de nulo.
+ Se sim, executa o comando pedido no primeiro momento.
+ Se não, ou seja, se armazena um valor nulo, executa o que está em seguida.
+*/
 
     //(5) Encadeamento Opcional
         //Trata-se, basicamente, de utilizar a variável opcional (seja dentro de um comando print, seja usando um método, etc).

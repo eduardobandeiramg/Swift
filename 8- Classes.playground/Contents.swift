@@ -11,6 +11,7 @@ class ContaCorrente{
         self.nome = nome
         self.saldo = saldo
     }
+
     
     /* Enquanto structures podem ter atributos não inicializados que receberão um valor na hora de construir o objeto,
     Classes, se possuem qualquer atributo não inicializado, precisam de construtores para explicitar como os atributos receberão

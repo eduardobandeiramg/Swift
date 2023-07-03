@@ -13,7 +13,7 @@ var exemplo10 = Array(arrayLiteral: 1.0)
 var exemplo11 = [Double]()
 //etc etc etc...
 
-//Principais funções e propriedades de arraya: (retornam valores opcionais)
+//Principais funções e propriedades de arrays: (retornam valores opcionais)
 exemplo2.append(1.0)
 exemplo2.append(2.0)
 exemplo2.append(3.0)
@@ -67,7 +67,7 @@ print(conjunto.remove(2))
 print()
 
                                                                     //TUPLAS
-//Conjunto de elementos de diferentes tipos que podem apresentar chave-valor. São basicamente arryas cujos elementos podem ser de tipos diversos e que também podem ser identificados por chaves
+//Conjunto de elementos de diferentes tipos que podem apresentar chave-valor. São basicamente arrays cujos elementos podem ser de tipos diversos e que também podem ser identificados por chaves
 var aluno : (matricula:Int , nome:String)
 aluno = (1000 , "Eduardo")
 aluno = (matricula:1001 , nome: "Francisco")
