@@ -188,3 +188,18 @@ verificando.verificaSaldo(minhacontacorrente)
  
  Pode ser que tanto a classe mãe quanto a classe filha possuam construtores. Nesse caso, é necessário que o construtor da classe filha receba os parametros que atribuam valores aos atributos da classe filha e os definam e também recebam os atributos exigidos pelo construtor da classe mãe e chame o construtor da classe mãe depois de preencher os seus atributos que não sejam inicializados na declaração da classe
  */
+
+
+
+
+/*
+ O polimorfismo de inclusão diz que classes filhas se comportam como classes mãe.
+ Um exemplo clássico desse comportamento está em um método ou função que recebe como parâmetro um tipo da classe mãe.
+ Esse método ou função, então, receberá um objeto da classe filha, porém sendo apontado por uma variável do tipo da classe mãe.
+ Essa variável terá acesso ao método da classe mãe que foi sobrescrito pelas classes filhas.
+ Poderá então chamar esse método da classe mãe e, automaticante, será executado o método sobrescrito da classe filha.
+ 
+ Caso existam métodos ou propriedades exclusivas de uma ou mais classes filhas e que não estejam na classe mãe, deverá ser utilizado então a conversão de tipos.
+ Ou seja, se antes um objeto da classe filha era apontado por uma variável da classe mãe; agora esse objeto deverá ser apontado por uma variável do tipo da classe filha.
+ Esse comportamento é chamado de polimorfismo de coerção e o procedimento de apontar um objeto da classe filha antes apontado por uma variável do tipo da classe mãe agora por uma variável do tipo da classe filha é chamado de TYPECASTING.
+ */
