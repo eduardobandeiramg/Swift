@@ -22,11 +22,21 @@
 /*
  Modificadores de acesso
  - private : torna o atributo ou o método privados, ou seja, não visíveis fora da classe
- - private (set) : o atributo ou método permanece público, mas se torna impossível modificà-los fora da classe
+ - private (set) : o atributo ou método permanece público para leitura, mas se torna impossível modificà-los fora da classe
+ */
+
+/*
+ Gets e Sets:
+ Todos os tipos de propriedades em Swift permitem definir sua visibilidade, métodos da classes de get e set e observadores de propriedades.
+ No caso de propriedades computadas, além do citado, também é possível criar gets e sets personalizados da própria propriedades (quando a propriedade é acessada por meio do objeto (objeto.propriedade)). Lembrando que isso também pode ser feito com observadores. 
+ Em Swift, para propriedades computadas, gets e sets são definidos implicitamente em cada variável, mas podem ser detalhados para adicionar lógica tanto na leitura quanto na alteração dessas propriedades. Esses gets e sets são definidos dentro da própria propriedade.
+ Propriedades computadas podem ser utilizadas como armazenadas. Ou seja, seus valores não dependerão de outros atributos. Entretanto, sendo propriedades computadas, podem ser definidas regras de gets e sets.
+ Para outros tipos de propriedades (armazenadas e estáticas) deve-se utilizar métodos, como padrão em outras linguagens (ou obsevadores)
+ Caso deseja-se detalhar o acesso direto a variáveis (onjeto.variavel), tanto para visualização quanto para alteração, deve-se utilizar entao de willset e didset.
  */
 
 class Cliente{
-    // Atributos7Propriedades armazenadas (padrão)
+    // Atributos/Propriedades armazenadas (padrão)
     private(set) var nome : String
     var saldo : Double {
         // Como o saldo é um atributo constantemente modificado, cabe utilizar nele um observador
@@ -43,7 +53,7 @@ class Cliente{
         }
     }
     
-    // Atributo/Propriedade computada (calculada a todo momento)
+    // Atributo/Propriedade computada (calculada a cada chamada da propriedade)
     var negativado : Bool{
         return saldo < 0
     }
